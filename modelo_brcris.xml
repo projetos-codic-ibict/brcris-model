@@ -352,6 +352,7 @@
 			<field name="description" />
 		</entity>
 	</entities>
+	
 	<relations>
 		<relation name="Class" description="The concepts defined on a classification schema" fromEntity="ClassificationSchema" toEntity="Concept">
 		</relation>
