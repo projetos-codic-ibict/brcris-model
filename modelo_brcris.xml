@@ -14,16 +14,20 @@
 			<field name="identifier.capes" />
 			<field name="identifier.other" />
 			<field name="name" description="nome da pessoa" />
-			<field name="familyName" />
-			<field name="givenName" />
+			<field name="fullName">
+				<field name="familyName" />
+				<field name="givenName" />
+			</field>	
 			<field name="alternateName" />
 			<field name="citationName" />
 			<field name="gender" />
 			<field name="electronicAddress" description="E-mail" />
 			<field name="birthDate" />
-			<field name="birthCountry" />
-			<field name="birthState" />
-			<field name="birthCity" />
+			<field name="birthLocation">
+				<field name="birthCountry" />
+				<field name="birthState" />
+				<field name="birthCity" />
+			</field>	
 			<field name="nationality" />
 			<field name="researchArea" />
 			<field name="fone" description="telefone" />
@@ -51,14 +55,18 @@
 			<field name="acronym" description="Sigla da organização" />
 			<field name="name" description="nome da organização" />
 			<field name="electronicAddress" />
-			<field name="coordinate.latitude" />
-			<field name="coordinate.longitude" />
-			<field name="address.description" />
-			<field name="address.cep" />
-			<field name="address.city" />
-			<field name="address.neighborhood" />
-			<field name="address.state" />
-			<field name="address.country" />
+			<field name="coordinates">
+				<field name="latitude" />
+				<field name="longitude" />
+			</field>	
+			<field name="address">
+				<field name="description" />
+				<field name="cep" />
+				<field name="city" />
+				<field name="neighborhood" />
+				<field name="state" />
+				<field name="country" />
+			</field>
 			<field name="phone" />
 			<field name="websiteUrl" description="Site do Periódico" />
 		</entity>
@@ -115,11 +123,15 @@
 			<field name="copyrightURL" description="URL com Informações de Copyright" />
 			<field name="rightsURL" description="URL com direitos da Publicação" />
 			<field name="apcURL" description="URL para Informações do APC (Taxa de Processamento de Artigos)" />
-			<field name="apcAmount" description="Valor do APC (Taxa de Processamento de Artigos)" />
-			<field name="apcCurrency" description="Moeda do APC (Taxa de Processamento de Artigos)" />
+			<field name="apcCost" description="Taxa de Processamento de Artigos">
+				<field name="apcAmount" description="Valor do APC (Taxa de Processamento de Artigos)" />
+				<field name="apcCurrency" description="Moeda do APC (Taxa de Processamento de Artigos)" />
+			</field>
 			<field name="submissionURL" description="URL para Instruções de Submissão" />
-			<field name="submissionAmount" description="Submission fee amount" />
-			<field name="submissionCurrency" description="Submission fee currency" />
+			<field name="submissionCost">		
+				<field name="submissionAmount" description="Submission fee amount" />
+				<field name="submissionCurrency" description="Submission fee currency" />
+			</field>
 			<field name="waiverPolicyURL" description="URL da Política de Isenção" />
 			<field name="digitalArchivingPolicy" description="Política de Arquivamento Digital" />
 			<field name="nationalArchiving" description="Biblioteca de Arquivamento" />
@@ -266,12 +278,16 @@
 			<field name="identifier.proccessNumber" />
 			<field name="identifier.brcris" />
 			<field name="type" />
-			<field name="modalityCode" />
-			<field name="modalityName" />
+			<field name="modality">
+				<field name="modalityCode" />
+				<field name="modalityName" />
+			</field>	
 			<field name="acronym" />
 			<field name="title" />
-			<field name="callAbbreviation" />
-			<field name="callName" />
+			<field name="call">
+				<field name="callAbbreviation" />
+				<field name="callName" />
+			</field>
 			<field name="startDate" />
 			<field name="endDate" />
 			<field name="subject" />
