@@ -10,7 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - This CHANGELOG file is created.
-- Entity **Patente** created.
+- Entity **Patent** created.
 
 ## [0.0.2] - 2023-02-22
 
