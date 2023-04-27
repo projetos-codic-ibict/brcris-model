@@ -31,3 +31,27 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Entity **Project**
     1. Fields _modalityCode_ and _modalityName_ grouped under _modality_
     2. Fields _callAbbreviation_ and _callName_ grouped under _call_
+
+## [0.0.3] - 2023-04-27
+
+### Updated
+
+- Entity **Journal**
+    - Included fields
+        - urlOpenalex
+        - publisher
+        - worksCount
+        - citedByCount
+        - isOa
+        - isInDoaj
+        - homepageUrl
+        - countryCode
+        - type
+        - worksApiUrl
+        - countByYear
+- Entity **Patent**
+    - Included fields
+        - urlEspacenet
+
+
+

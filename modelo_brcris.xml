@@ -85,18 +85,47 @@
 			<field name="url" />
 		</entity>
 		<entity name="Journal">
+			<field name="identifier.issn" description="ISSN" cardinality="n" />
 			<field name="identifier.issnl" description="ISSN-L" />
+
 			<field name="identifier.diadorim" description="id diadorim" />
 			<field name="identifier.latindex" description="id LatinDex" />
 			<field name="identifier.ulrichsweb" description="id ULrichsweb" />
 			<field name="identifier.oai" description="id oai" />
 			<field name="identifier.brcris" description="hash issn" />
 			<field name="identifier.opendoarId" />
-			<field name="identifier.issn" description="ISSN" cardinality="n" />
-			<field name="compatibility" />
-			<field name="acronym" />
-			<field name="status" description="status da revista (active / inactive)" />
+
 			<field name="title" description="título da revista" />
+			<field name="status" description="status da revista (active / inactive)" />
+			<field name="fullTextFormats" description="Formatos do texto completo" />
+			<field name="urlOpenalex" description="link de acesso" />
+			<field name="publisher" description="Quem publica a revista" />
+			<field name="worksCount" description="Total de trabalhos" />
+			<field name="citedByCount" description="Total de citações" />
+			<field name="isOa" description="True ou False" />
+			<field name="isInDoaj" description="True ou False" />
+			<field name="countryCode" description="Código do país" />
+			<field name="type" description="Tipo de publicação" />
+			<field name="homepageUrl" description="" />
+			<field name="worksApiUrl" description="" />
+			<field name="countByYear" description="Indicadores por ano">
+				<field name="year" description="Ano" />
+				<field name="worksCount" description="Total" />
+				<field name="citedByCount" description="Total de citações" />
+			</field>
+			<field name="concepts" description="">
+				<field name="id" description="" />
+				<field name="wikidata" description="" />
+				<field name="displayName" description="" />
+				<field name="level" description="" />
+				<field name="score" description="" />
+			</field>
+			<field name="assessmentArea" description="Área da Revista"/>
+			<field name="qualis" description="Qualis da Revista" />
+
+			
+			<field name="compatibility" />
+			<field name="acronym" />		
 			<field name="subtitle" description="subtítulo da revista" />
 			<field name="oldestTitle" description="Titulos anteriores da revista" />
 			<field name="editor" description="nome do editor" />
@@ -117,7 +146,6 @@
 			<field name="aggregator" description="Agregador (OJS, Scielo Brasil, Scopus, ....)" />
 			<field name="keywords" description="Palavras chave " />
 			<field name="language" description="Idioma do texto completo" />
-			<field name="fullTextFormats" description="Formatos do texto completo" />
 			<field name="reviewProcess" description="Tipo de Revisão " />
 			<field name="licenceURL" description="URL dos Termos da Licença" />
 			<field name="copyrightURL" description="URL com Informações de Copyright" />
@@ -242,6 +270,7 @@
 			<field name="identifier.brcris" />
 			<field name="identifier.lattes" />
 			<field name="identifier.espacenet" />
+			<field name="urlEspacenet" />
 			<field name="kindCode" />
 			<field name="title.espacenet" />
 			<field name="title.lattes" />
