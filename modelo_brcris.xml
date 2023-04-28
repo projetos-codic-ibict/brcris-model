@@ -49,6 +49,8 @@
 			<field name="identifier.capes" />
 			<field name="identifier.mec" />
 			<field name="identifier.inep" description="Identificador do INEP" />
+			<field name="identifier.ci" />
+			<field name="identifier.scopus" />
 			<field name="identifier.other" />
 			<field name="type" />
 			<field name="juridicNature" description="Natureza Organizacional" />

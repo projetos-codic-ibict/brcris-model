@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [0.0.1] - 2023-01-16
 
+##### *Author: Tiago Oliveira*
 ### Added
 
 - This CHANGELOG file is created.
@@ -14,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [0.0.2] - 2023-02-22
 
+##### *Author: Vivian Silva*
 ### Structural changes to group related attributes as subfields of a common complex field
 
 - Entity **Person**
@@ -34,6 +36,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [0.0.3] - 2023-04-27
 
+##### *Author: Raulivan Rodrigo*
 ### Updated
 
 - Entity **Journal**
@@ -53,5 +56,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
     - Included fields
         - urlEspacenet
 
+## [0.0.4] - 2023-04-28
 
+##### *Author: Vivian Silva*
+### Updated
+
+- Entity **OrgUnit**
+    - Included fields
+        - identifier.ci
+        - identifier.scopus
 
