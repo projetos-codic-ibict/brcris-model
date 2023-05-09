@@ -66,3 +66,43 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
         - identifier.ci
         - identifier.scopus
 
+## [0.0.5] - 2023-05-09
+
+##### *Author: Tiago Oliveira*
+### Created
+
+- Entity **ResearchGroup**
+  - Included fields
+    - identifier.brcris
+    - identifier.dgp
+    - title
+    - description
+    - situation
+    - creationYear
+    - link
+    - leader
+      - name
+    - researchLine
+      - name
+      - link
+      - objective
+      - keyworks
+        - name
+      - knowledgeAreas
+        - name
+      - applicationSector
+        - name
+    - equipamentos
+      - name
+    - software
+      - name
+
+- Relationship **ResearchGroup** - **OrgUnit**
+  - Included fields
+    - role
+    - startDate
+    - endDate
+
+- Relationship **ResearchGroup** - **Person**
+  - Included fields
+    - bolsista

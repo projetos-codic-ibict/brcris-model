@@ -17,7 +17,7 @@
 			<field name="fullName">
 				<field name="familyName" />
 				<field name="givenName" />
-			</field>	
+			</field>
 			<field name="alternateName" />
 			<field name="citationName" />
 			<field name="gender" />
@@ -27,7 +27,7 @@
 				<field name="birthCountry" />
 				<field name="birthState" />
 				<field name="birthCity" />
-			</field>	
+			</field>
 			<field name="nationality" />
 			<field name="researchArea" />
 			<field name="fone" description="telefone" />
@@ -60,7 +60,7 @@
 			<field name="coordinates">
 				<field name="latitude" />
 				<field name="longitude" />
-			</field>	
+			</field>
 			<field name="address">
 				<field name="description" />
 				<field name="cep" />
@@ -125,9 +125,9 @@
 			<field name="assessmentArea" description="Área da Revista"/>
 			<field name="qualis" description="Qualis da Revista" />
 
-			
+
 			<field name="compatibility" />
-			<field name="acronym" />		
+			<field name="acronym" />
 			<field name="subtitle" description="subtítulo da revista" />
 			<field name="oldestTitle" description="Titulos anteriores da revista" />
 			<field name="editor" description="nome do editor" />
@@ -158,7 +158,7 @@
 				<field name="apcCurrency" description="Moeda do APC (Taxa de Processamento de Artigos)" />
 			</field>
 			<field name="submissionURL" description="URL para Instruções de Submissão" />
-			<field name="submissionCost">		
+			<field name="submissionCost">
 				<field name="submissionAmount" description="Submission fee amount" />
 				<field name="submissionCurrency" description="Submission fee currency" />
 			</field>
@@ -312,7 +312,7 @@
 			<field name="modality">
 				<field name="modalityCode" />
 				<field name="modalityName" />
-			</field>	
+			</field>
 			<field name="acronym" />
 			<field name="title" />
 			<field name="call">
@@ -382,8 +382,40 @@
 			<field name="name" />
 			<field name="description" />
 		</entity>
+    <entity name="ResearchGroup">
+      <field name="identifier.brcris" />
+      <field name="identifier.dgp" />
+      <field name="title" />
+      <field name="description"/>
+      <field name="situation" />
+      <field name="creationYear"/>
+      <field name="link"/>
+      <field name="leader">
+        <field name="name" />
+      </field>
+      <field name="researchLine">
+        <field name="name" />
+        <field name="link" />
+        <field name="objective"/>
+        <field name="keyworks">
+          <field name="name" />
+        </field>
+        <field name="knowledgeAreas">
+          <field name="name" />
+        </field>
+        <field name="applicationSector">
+          <field name="name" />
+        </field>
+      </field>
+      <field name="equipamentos">
+        <field name="name" />
+      </field>
+      <field name="software">
+        <field name="name" />
+      </field>
+    </entity>
 	</entities>
-	
+
 	<relations>
 		<relation name="Class" description="The concepts defined on a classification schema" fromEntity="ClassificationSchema" toEntity="Concept">
 		</relation>
@@ -411,6 +443,8 @@
 		</relation>
 		<relation name="CourseOrgUnit" description="The OrgUnit(s) that provided the Course." fromEntity="OrgUnit" toEntity="Course">
 		</relation>
+    <relation name="ResearchGroupOrgUnit" description="The OrgUnit(s) that provided the ResearchGroup." fromEntity="OrgUnit" toEntity="ResearchGroup">
+    </relation>
 		<relation name="Authorship" description="The author of this content or rating." fromEntity="Publication" toEntity="Person">
 			<attributes>
 				<field name="order" description="If the Person is the 1st, 2st, etc author" />
@@ -478,6 +512,7 @@
 				<field name="startDate" description="the date he/she became a member of the research group" />
 				<field name="endDate" description="the date e/she left the research group" />
 				<field name="affiliation" description="An organization such as a school, NGO, corporation, club, etc. - The name of the item." />
+        <field name="scholarshipHolder" description="Indicates if the member is a scholarship holder" />
 			</attributes>
 		</relation>
 		<relation name="TeamMembership" description="The program related to an Course." fromEntity="Project" toEntity="Person">
