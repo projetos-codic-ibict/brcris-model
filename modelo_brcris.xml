@@ -414,7 +414,7 @@
       <field name="creationYear"/>
       <field name="URL"/>
       <field name="researchLine"/>
-      <field name="keywork"/>
+      <field name="keyword"/>
       <field name="knowledgeArea"/>
       <field name="applicationSector"/>
       <field name="equipment"/>
