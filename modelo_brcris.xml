@@ -408,34 +408,17 @@
     <entity name="ResearchGroup">
       <field name="identifier.brcris" />
       <field name="identifier.dgp" />
-      <field name="title" />
+      <field name="name" />
       <field name="description"/>
-      <field name="situation" />
+      <field name="status" />
       <field name="creationYear"/>
-      <field name="link"/>
-      <field name="leader">
-        <field name="name" />
-      </field>
-      <field name="researchLine">
-        <field name="name" />
-        <field name="link" />
-        <field name="objective"/>
-        <field name="keyworks">
-          <field name="name" />
-        </field>
-        <field name="knowledgeAreas">
-          <field name="name" />
-        </field>
-        <field name="applicationSector">
-          <field name="name" />
-        </field>
-      </field>
-      <field name="equipamentos">
-        <field name="name" />
-      </field>
-      <field name="software">
-        <field name="name" />
-      </field>
+      <field name="URL"/>
+      <field name="researchLine"/>
+      <field name="keywork"/>
+      <field name="knowledgeArea"/>
+      <field name="applicationSector"/>
+      <field name="equipment"/>
+      <field name="software"/>
     </entity>
 	</entities>
 
@@ -456,6 +439,8 @@
 		</relation>
 		<relation name="Affiliation" description="Is a relation beteween Person and OrgUnit" fromEntity="OrgUnit" toEntity="Person">
 		</relation>
+    <relation name="LeaderResearchGroup" description="Is a relation between the Leader Person and ResearchGroup" fromEntity="Person" toEntity="ResearchGroup">
+    </relation>
 		<relation name="IsUnitOf" description="The unit related to an organization." fromEntity="OrgUnit" toEntity="OrgUnit">
 		</relation>
 		<relation name="OrgUnitProgram" description="The program related to an organization." fromEntity="OrgUnit" toEntity="Program">
@@ -466,7 +451,12 @@
 		</relation>
 		<relation name="CourseOrgUnit" description="The OrgUnit(s) that provided the Course." fromEntity="OrgUnit" toEntity="Course">
 		</relation>
-    <relation name="ResearchGroupOrgUnit" description="The OrgUnit(s) that provided the ResearchGroup." fromEntity="OrgUnit" toEntity="ResearchGroup">
+    <relation name="LeaderResearchGroupOrgUnit" description="The OrgUnit(s) that provided the ResearchGroup leader." fromEntity="OrgUnit" toEntity="ResearchGroup">
+    </relation>
+    <relation name="PartnerResearchGroupOrgUnit" description="The OrgUnits(s) that have Partner with the ResearchGroups" fromEntity="OrgUnit" toEntity="ResearchGroup">
+    </relation>
+    <relation name="MemberResearchGroup" description="Is a relation between Person and ResearchGroup" fromEntity="Person" toEntity="ResearchGroup">
+      <field name="scholarshipHolder" description="Indicates if the member is a scholarship holder" />
     </relation>
 		<relation name="Authorship" description="The author of this content or rating." fromEntity="Publication" toEntity="Person">
 			<attributes>
@@ -537,7 +527,6 @@
 				<field name="startDate" description="the date he/she became a member of the research group" />
 				<field name="endDate" description="the date e/she left the research group" />
 				<field name="affiliation" description="An organization such as a school, NGO, corporation, club, etc. - The name of the item." />
-        <field name="scholarshipHolder" description="Indicates if the member is a scholarship holder" />
 			</attributes>
 		</relation>
 		<relation name="TeamMembership" description="The program related to an Course." fromEntity="Project" toEntity="Person">

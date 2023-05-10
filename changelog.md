@@ -81,34 +81,28 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Included fields
     - identifier.brcris
     - identifier.dgp
-    - title
+    - name
     - description
-    - situation
+    - status
     - creationYear
-    - link
-    - leader
-      - name
+    - URL
     - researchLine
-      - name
-      - link
-      - objective
-      - keyworks
-        - name
-      - knowledgeAreas
-        - name
-      - applicationSector
-        - name
-    - equipamentos
-      - name
+    - keywork
+    - knowledgeArea
+    - applicationSector
+    - equipament
     - software
-      - name
 
-- Relationship **ResearchGroup** - **Person**
+- Relationship **MemberResearchGroup**
+  - Relationship between **ResearchGroup** - **Person**
   - Included fields
-    - role
-    - startDate
-    - endDate
-    - affiliation
     - scholarshipHolder
 
-- Relationship **ResearchGroup** - **OrgUnit**
+- Relationship **LeaderResearchGroup**
+  - Relationship from **ResearchGroup** and **Person**
+
+- Relationship **LeaderResearchGroup**
+  - Relationship from **ResearchGroup** and **OrgUnit**
+
+- Relationship **PartnerResearchGroup**
+  - Relationship from **ResearchGroup** and **OrgUnit**
