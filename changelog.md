@@ -66,7 +66,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
         - identifier.ci
         - identifier.scopus
 
-## [0.0.5] - 2023-05-09
+## [0.0.6] - 2023-05-09
+
+##### *Author: Raulivan Rodrigo*
+### Added
+
+- Entity **Software** created.
+## [0.0.7] - 2023-05-09
 
 ##### *Author: Tiago Oliveira*
 ### Created
@@ -102,7 +108,3 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
     - role
     - startDate
     - endDate
-
-- Relationship **ResearchGroup** - **Person**
-  - Included fields
-    - bolsista

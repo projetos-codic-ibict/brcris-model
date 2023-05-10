@@ -305,6 +305,29 @@
 				<field name="kind"/>
 			</field>
 		</entity>
+		<entity name="Software">
+			<field name="identifier.brcris" />
+			<field name="inpiRegistrationCode" description="Número de registro no INPI"/>
+			<field name="title.lattes" description="titulo informado no Lattes"/>
+			<field name="releaseYear" description="Ano informado no Lattes"/>
+			<field name="doi" description="número do doi"/>
+			<field name="language" description="Idioma do Software"/>
+			<field name="registrationCountry" description="Pais de registro"/>
+			<field name="kind" description="Natureza do software"/>
+			<field name="environment" description="Ambiente do Software"/>
+			<field name="availability" description="Disponibilidade do Software"/>
+			<field name="description" description="A finalidade do software"/>
+			<field name="fundingInstitution" description="instituição financiadora"/>
+			<field name="platform" description="Plataforma do Software"/>
+			<field name="knowledgeAreas" description="áreas de conhecimento do software"/>
+			<field name="creator" description="Nome dos criadores do software"/>
+			<field name="additionalInformation" description="Informações adicionais"/>
+			<field name="keyword" description="Palavras chave"/>
+			<field name="activitySector" description="Setor de Atividade"/>
+			<field name="depositDate"/>
+			<field name="concessionDate"/>
+			<field name="registrationInstitution" description="Instituição de registro"/>
+		</entity>
 		<entity name="Project">
 			<field name="identifier.proccessNumber" />
 			<field name="identifier.brcris" />
@@ -501,6 +524,8 @@
 		<relation name="Depositor" description="Is a relation related to an Person of Patent." fromEntity="Patent" toEntity="Person">
 		</relation>
 		<relation name="Applicant" description="Is a relation related to an OrgUnit of Patent." fromEntity="Patent" toEntity="OrgUnit">
+		</relation>
+		<relation name="Creator" description="Is a relation related to an Person of Software." fromEntity="Software" toEntity="Person">
 		</relation>
 		<relation name="IsProgramOf" description="Is a relation beteween a research group (considered as an OrgUnit) and a member." fromEntity="Program" toEntity="Course">
 		</relation>
