@@ -66,9 +66,43 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
         - identifier.ci
         - identifier.scopus
 
-## [0.0.3] - 2023-05-09
+## [0.0.5] - 2023-05-09
 
 ##### *Author: Raulivan Rodrigo*
 ### Added
 
 - Entity **Software** created.
+## [0.0.6] - 2023-05-09
+
+##### *Author: Tiago Oliveira*
+### Created
+
+- Entity **ResearchGroup**
+  - Included fields
+    - identifier.brcris
+    - identifier.dgp
+    - name
+    - description
+    - status
+    - creationYear
+    - URL
+    - researchLine
+    - keywork
+    - knowledgeArea
+    - applicationSector
+    - equipament
+    - software
+
+- Relationship **MemberResearchGroup**
+  - Relationship between **ResearchGroup** - **Person**
+  - Included fields
+    - scholarshipHolder
+
+- Relationship **LeaderResearchGroup**
+  - Relationship from **ResearchGroup** and **Person**
+
+- Relationship **LeaderResearchGroup**
+  - Relationship from **ResearchGroup** and **OrgUnit**
+
+- Relationship **PartnerResearchGroup**
+  - Relationship from **ResearchGroup** and **OrgUnit**

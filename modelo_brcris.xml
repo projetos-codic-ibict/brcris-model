@@ -17,7 +17,7 @@
 			<field name="fullName">
 				<field name="familyName" />
 				<field name="givenName" />
-			</field>	
+			</field>
 			<field name="alternateName" />
 			<field name="citationName" />
 			<field name="gender" />
@@ -27,7 +27,7 @@
 				<field name="birthCountry" />
 				<field name="birthState" />
 				<field name="birthCity" />
-			</field>	
+			</field>
 			<field name="nationality" />
 			<field name="researchArea" />
 			<field name="fone" description="telefone" />
@@ -60,7 +60,7 @@
 			<field name="coordinates">
 				<field name="latitude" />
 				<field name="longitude" />
-			</field>	
+			</field>
 			<field name="address">
 				<field name="description" />
 				<field name="cep" />
@@ -125,9 +125,9 @@
 			<field name="assessmentArea" description="Área da Revista"/>
 			<field name="qualis" description="Qualis da Revista" />
 
-			
+
 			<field name="compatibility" />
-			<field name="acronym" />		
+			<field name="acronym" />
 			<field name="subtitle" description="subtítulo da revista" />
 			<field name="oldestTitle" description="Titulos anteriores da revista" />
 			<field name="editor" description="nome do editor" />
@@ -158,7 +158,7 @@
 				<field name="apcCurrency" description="Moeda do APC (Taxa de Processamento de Artigos)" />
 			</field>
 			<field name="submissionURL" description="URL para Instruções de Submissão" />
-			<field name="submissionCost">		
+			<field name="submissionCost">
 				<field name="submissionAmount" description="Submission fee amount" />
 				<field name="submissionCurrency" description="Submission fee currency" />
 			</field>
@@ -335,7 +335,7 @@
 			<field name="modality">
 				<field name="modalityCode" />
 				<field name="modalityName" />
-			</field>	
+			</field>
 			<field name="acronym" />
 			<field name="title" />
 			<field name="call">
@@ -405,8 +405,23 @@
 			<field name="name" />
 			<field name="description" />
 		</entity>
+    <entity name="ResearchGroup">
+      <field name="identifier.brcris" />
+      <field name="identifier.dgp" />
+      <field name="name" />
+      <field name="description"/>
+      <field name="status" />
+      <field name="creationYear"/>
+      <field name="URL"/>
+      <field name="researchLine"/>
+      <field name="keywork"/>
+      <field name="knowledgeArea"/>
+      <field name="applicationSector"/>
+      <field name="equipment"/>
+      <field name="software"/>
+    </entity>
 	</entities>
-	
+
 	<relations>
 		<relation name="Class" description="The concepts defined on a classification schema" fromEntity="ClassificationSchema" toEntity="Concept">
 		</relation>
@@ -424,6 +439,8 @@
 		</relation>
 		<relation name="Affiliation" description="Is a relation beteween Person and OrgUnit" fromEntity="OrgUnit" toEntity="Person">
 		</relation>
+    <relation name="LeaderResearchGroup" description="Is a relation between the Leader Person and ResearchGroup" fromEntity="Person" toEntity="ResearchGroup">
+    </relation>
 		<relation name="IsUnitOf" description="The unit related to an organization." fromEntity="OrgUnit" toEntity="OrgUnit">
 		</relation>
 		<relation name="OrgUnitProgram" description="The program related to an organization." fromEntity="OrgUnit" toEntity="Program">
@@ -434,6 +451,13 @@
 		</relation>
 		<relation name="CourseOrgUnit" description="The OrgUnit(s) that provided the Course." fromEntity="OrgUnit" toEntity="Course">
 		</relation>
+    <relation name="LeaderResearchGroupOrgUnit" description="The OrgUnit(s) that provided the ResearchGroup leader." fromEntity="OrgUnit" toEntity="ResearchGroup">
+    </relation>
+    <relation name="PartnerResearchGroupOrgUnit" description="The OrgUnits(s) that have Partner with the ResearchGroups" fromEntity="OrgUnit" toEntity="ResearchGroup">
+    </relation>
+    <relation name="MemberResearchGroup" description="Is a relation between Person and ResearchGroup" fromEntity="Person" toEntity="ResearchGroup">
+      <field name="scholarshipHolder" description="Indicates if the member is a scholarship holder" />
+    </relation>
 		<relation name="Authorship" description="The author of this content or rating." fromEntity="Publication" toEntity="Person">
 			<attributes>
 				<field name="order" description="If the Person is the 1st, 2st, etc author" />
