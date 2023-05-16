@@ -440,6 +440,7 @@
 		<relation name="Affiliation" description="Is a relation beteween Person and OrgUnit" fromEntity="OrgUnit" toEntity="Person">
 		</relation>
     <relation name="LeaderResearchGroup" description="Is a relation between the Leader Person and ResearchGroup" fromEntity="Person" toEntity="ResearchGroup">
+      <field name="scholarshipHolder" description="Indicates if the member is a scholarship holder" />
     </relation>
 		<relation name="IsUnitOf" description="The unit related to an organization." fromEntity="OrgUnit" toEntity="OrgUnit">
 		</relation>
@@ -456,6 +457,7 @@
     <relation name="PartnerResearchGroupOrgUnit" description="The OrgUnits(s) that have Partner with the ResearchGroups" fromEntity="OrgUnit" toEntity="ResearchGroup">
     </relation>
     <relation name="MemberResearchGroup" description="Is a relation between Person and ResearchGroup" fromEntity="Person" toEntity="ResearchGroup">
+      <field name="role" description="Indicate the rold of the member"></field>
       <field name="scholarshipHolder" description="Indicates if the member is a scholarship holder" />
     </relation>
 		<relation name="Authorship" description="The author of this content or rating." fromEntity="Publication" toEntity="Person">
