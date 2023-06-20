@@ -51,6 +51,7 @@
 			<field name="identifier.inep" description="Identificador do INEP" />
 			<field name="identifier.ci" />
 			<field name="identifier.scopus" />
+			<field name="identifier.ringgo" />
 			<field name="identifier.other" />
 			<field name="type" />
 			<field name="juridicNature" description="Natureza Organizacional" />
