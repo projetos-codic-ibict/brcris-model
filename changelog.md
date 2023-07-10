@@ -106,3 +106,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Relationship **PartnerResearchGroup**
   - Relationship from **ResearchGroup** and **OrgUnit**
+  
+## [0.0.5] - 2023-07-10
+
+##### *Author: Raulivan Rodrigo*
+### Updated
+
+- Entity **Journal**
+    - Included fields
+        - identifier.issn_l
+		- identifier.mag
+		- identifier.openalex
+		- identifier.wikidata
+		- identifier.fatcat

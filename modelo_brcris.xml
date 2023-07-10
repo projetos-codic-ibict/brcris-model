@@ -89,7 +89,11 @@
 		</entity>
 		<entity name="Journal">
 			<field name="identifier.issn" description="ISSN" cardinality="n" />
-			<field name="identifier.issnl" description="ISSN-L" />
+			<field name="identifier.issn_l" description="ISSN-L" />
+			<field name="identifier.mag" description="" />
+			<field name="identifier.openalex" description="" />
+			<field name="identifier.wikidata" description="" />
+			<field name="identifier.fatcat" description="" />
 
 			<field name="identifier.diadorim" description="id diadorim" />
 			<field name="identifier.latindex" description="id LatinDex" />
