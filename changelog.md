@@ -101,10 +101,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Relationship **LeaderResearchGroup**
   - Relationship from **ResearchGroup** and **Person**
 
-- Relationship **LeaderResearchGroup**
+- Relationship **LeaderResearchGroupOrgUnit**
   - Relationship from **ResearchGroup** and **OrgUnit**
 
-- Relationship **PartnerResearchGroup**
+- Relationship **PartnerResearchGroupOrgUnit**
   - Relationship from **ResearchGroup** and **OrgUnit**
   
 ## [0.0.5] - 2023-07-10
