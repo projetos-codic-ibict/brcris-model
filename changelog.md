@@ -119,3 +119,29 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 		- identifier.openalex
 		- identifier.wikidata
 		- identifier.fatcat
+
+## [0.0.6] - 2023-08-29
+
+##### *Author: Vivian Silva*
+### Entity **Journal** cleaned and refactored to cover only the information currently being collected from OpenAlex
+
+- Fields maintained:
+	- identifier.issn
+	- identifier.issn_l
+	- identifier.openalex
+	- identifier.brcris
+	- title
+	- publisher
+	- websiteURL
+	- isOa
+	- isInDoaj
+	- apcCost (including subfields _apcAmount_ and _apcCurrency_)
+	- countryCode
+	- type
+	- assessmentArea
+	- qualis
+	- keywords
+	- 2yr_mean_citedness
+	- h_index
+	- i10_index
+	- googleH5
