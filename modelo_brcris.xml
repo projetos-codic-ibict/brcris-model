@@ -12,6 +12,7 @@
 			<field name="identifier.scopusAuthorID"/>
 			<field name="identifier.cienciaID"/>
 			<field name="identifier.capes"/>
+			<field name="identifier.openalex"/>
 			<field name="identifier.other"/>
 			<field name="name" description="nome da pessoa"/>
 			<field name="fullName">
