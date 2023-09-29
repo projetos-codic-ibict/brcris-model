@@ -91,15 +91,15 @@
 		<entity name="Journal">
 			<field name="identifier.issn" description="ISSN"/>
 			<field name="identifier.issn_l" description="ISSN-L"/>
-			<field name="identifier.openalex"/>
-			<field name="identifier.brcris" description="hash issn"/>
+			<field name="identifier.openalex" description="Identificação da revista na OpenAlex"/>
+			<field name="identifier.brcris" description="Identificação da revista no padrão do BrCris (hash do ISSN)"/>
 			<field name="title" description="título da revista"/>
 			<field name="publisher" description="Quem publica a revista"/>
 			<field name="websiteURL" description="url da revista"/>
-			<field name="isOa" description="True ou False"/>
-			<field name="isInDoaj" description="True ou False"/>
+			<field name="isOa" description="Verifica se a revista é Oa (True ou False)"/>
+			<field name="isInDoaj" description="Verifica se a revista está no Doaj (True ou False)"/>
 			<field name="apcCost" description="Taxa de Processamento de Artigos">
-				<field name="apcAmount" description="Valor do APC"/>
+				<field name="apcAmount" description="Valor da revista (APC)"/>
 				<field name="apcCurrency" description="Moeda do APC"/>
 			</field>
 			<field name="countryCode" description="Código do país"/>
@@ -185,44 +185,44 @@
 			<field name="websiteUrl"/>
 		</entity>
 		<entity name="Patent">
-			<field name="identifier.brcris"/>
-			<field name="identifier.lattes"/>
-			<field name="identifier.espacenet"/>
-			<field name="urlEspacenet"/>
-			<field name="kindCode"/>
-			<field name="title.espacenet"/>
-			<field name="title.lattes"/>
-			<field name="depositDate"/>
-			<field name="publicationDate"/>
-			<field name="countryCode"/>
-			<field name="inventor"/>
-			<field name="applicant"/>
-			<field name="classification.ipc">
-				<field name="sequence"/>
-				<field name="text"/>
-				<field name="section"/>
-				<field name="class"/>
-				<field name="subclass"/>
-				<field name="group"/>
-				<field name="subgroup"/>
+			<field name="identifier.brcris" description="Identificador da patente no formado do BrCris "/>
+			<field name="identifier.lattes" description="Identificador do currículo na Plataforma Lattes que possui a patente"/>
+			<field name="identifier.espacenet" description="Identificação da patente na Expacenet"/>
+			<field name="urlEspacenet" description="URL da patente na Espacenet"/>
+			<field name="kindCode" description="Código de publicação da patente Ex.: A, B1, C1 etc."/>
+			<field name="title.espacenet" description="Título da patente informado na Espacenet"/>
+			<field name="title.lattes" description="Título da patente informado na Plataforma Lattes"/>
+			<field name="depositDate" description="Data de depósito da patente"/>
+			<field name="publicationDate" description="Data de publicação da patente"/>
+			<field name="countryCode" description="Código do país de depósito da patente"/>
+			<field name="inventor" description="Nome do inventor da patente"/>
+			<field name="applicant"  description="Nome do depositante da patente"/>
+			<field name="classification.ipc" description="Classificação IPC recebida pela patente">
+				<field name="sequence" description="Ordem das classificações"/>
+				<field name="text" description="Código completo da classificação"/>
+				<field name="section" description="Seção (Parte do código da classificação)"/>
+				<field name="class" description="Classe (Parte do código da classificação)"/>
+				<field name="subclass"  description="Sub-classe (Parte do código da classificação)"/>
+				<field name="group" description="Grupo (Parte do código da classificação)"/>
+				<field name="subgroup"  description="Sub-grupo (Parte do código da classificação)"/>
 			</field>
-			<field name="classification.cpc">
-				<field name="sequence"/>
-				<field name="text"/>
+			<field name="classification.cpc" description="Classificação CPC recebida pela patente">
+				<field name="sequence"  description="Ordem das classificações"/>
+				<field name="text" description="Código completo da classificação"/>
 			</field>
-			<field name="abstract.lattes"/>
-			<field name="abstract.espacenet"/>
-			<field name="originatesFrom"/>
-			<field name="alternateIdentifier">
-				<field name="status"/>
-				<field name="format"/>
-				<field name="country"/>
-				<field name="number"/>
-				<field name="kind"/>
+			<field name="abstract.lattes"  description="Resumo da patente informado na Plataforma Lattes"/>
+			<field name="abstract.espacenet" description="Resumo da patente informado na Espacenet"/>
+			<field name="originatesFrom" description="Código da Família da patente, conforme organização definida pela Espacenet"/>
+			<field name="alternateIdentifier" description="Códigos alternativos de identificação da Patente">
+				<field name="status"  description="Status do número de identificação"/>
+				<field name="format" description="Formato atribuído a numeração, conforme padrão da Espacenet"/>
+				<field name="country" description="País de depósito da patente"/>
+				<field name="number" description="Número de identificação da patente "/>
+				<field name="kind" description="Código de publicação da patente Ex.: A, B1, C1 etc."/>
 			</field>
 		</entity>
 		<entity name="Software">
-			<field name="identifier.brcris"/>
+			<field name="identifier.brcris" description="Identificador do software no formado do BrCris"/>
 			<field name="inpiRegistrationCode" description="Número de registro no INPI"/>
 			<field name="title.lattes" description="titulo informado no Lattes"/>
 			<field name="releaseYear" description="Ano informado no Lattes"/>
@@ -240,8 +240,8 @@
 			<field name="additionalInformation" description="Informações adicionais"/>
 			<field name="keyword" description="Palavras chave"/>
 			<field name="activitySector" description="Setor de Atividade"/>
-			<field name="depositDate"/>
-			<field name="concessionDate"/>
+			<field name="depositDate" description="Data de registro do software"/>
+			<field name="concessionDate" description="Data de publicação do registro do software"/>
 			<field name="registrationInstitution" description="Instituição de registro"/>
 		</entity>
 		<entity name="Project">
