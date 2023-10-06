@@ -322,19 +322,19 @@
 			<field name="description"/>
 		</entity>
 		<entity name="ResearchGroup">
-			<field name="identifier.brcris"/>
-			<field name="identifier.dgp"/>
-			<field name="name"/>
-			<field name="description"/>
-			<field name="status"/>
-			<field name="creationYear"/>
-			<field name="URL"/>
-			<field name="researchLine"/>
-			<field name="keyword"/>
-			<field name="knowledgeArea"/>
-			<field name="applicationSector"/>
-			<field name="equipment"/>
-			<field name="software"/>
+			<field name="identifier.brcris" description="baseado no nome do grupo + ano de criação + o codigo do dgp"/>
+			<field name="identifier.dgp" description="codigo do dgp do grupo no CNPq"/>
+			<field name="name" description="nome do grupo"/>
+			<field name="description" description="resumo informado do grupo"/>
+			<field name="status" />
+			<field name="creationYear" description="ano de criação do grupo"/>
+			<field name="URL" description="URL de acesso ao grupo"/>
+			<field name="researchLine" description="nome da linha de pesquisa do grupo (pode-se ter várias)"/>
+			<field name="keyword" description="palavras chaves informadas do grupo (pode-se ter várias)"/>
+			<field name="knowledgeArea" description="área de Conhecimento mais específica do grupo (pode-se ter várias)"/>
+			<field name="applicationSector" description="setor de aplicação do grupo (pode-se ter várias)"/>
+			<field name="equipment" description="equipamentos que estão associados ao grupo"/>
+			<field name="software" description="softwares que estão disponíveis ao grupo"/>
 		</entity>
 	</entities>
 	<relations>
