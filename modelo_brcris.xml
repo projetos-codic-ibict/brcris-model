@@ -243,6 +243,8 @@
 			<field name="depositDate" description="Data de registro do software"/>
 			<field name="concessionDate" description="Data de publicação do registro do software"/>
 			<field name="registrationInstitution" description="Instituição de registro"/>
+			<field name="urlINPI" description="URL do software no INPI"/>
+			<field name="owner" description="Proprietário do software"/>
 		</entity>
 		<entity name="Project">
 			<field name="identifier.proccessNumber"/>

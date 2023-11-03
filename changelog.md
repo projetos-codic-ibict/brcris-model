@@ -145,3 +145,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 	- h_index
 	- i10_index
 	- googleH5
+
+## [0.0.6] - 2023-11-13
+
+##### *Author: Raulivan Rodrigo*
+### Updated
+
+- Entity **Software**
+    - Included fields
+        - urlINPI
+        - owner
