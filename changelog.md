@@ -155,3 +155,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
     - Included fields
         - urlINPI
         - owner
+
+## [0.0.7] - 2024-01-17
+
+##### *Author: Raulivan Rodrigo*
+### Updated
+
+- Entity **Project**
+    
+    - Deleted fields
+        - modality
+        - call
+        - uses
+        - OAMandate
+
+    - Deleted relation
+        - ConsortiumMembership

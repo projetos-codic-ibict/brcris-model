@@ -248,31 +248,18 @@
 		</entity>
 		<entity name="Project">
 			<field name="identifier.proccessNumber"/>
-			<field name="identifier.brcris"/>
-			<field name="type"/>
-			<field name="modality">
-				<field name="modalityCode"/>
-				<field name="modalityName"/>
-			</field>
-			<field name="acronym"/>
-			<field name="title"/>
-			<field name="call">
-				<field name="callAbbreviation"/>
-				<field name="callName"/>
-			</field>
-			<field name="startDate"/>
-			<field name="endDate"/>
-			<field name="subject"/>
-			<field name="keyword"/>
-			<field name="researchAreas"/>
-			<field name="researchAreas.cnpq"/>
-			<field name="abstract"/>
-			<field name="status"/>
-			<field name="uses"/>
-			<field name="OAMandate">
-				<field name="mandated" description="campo mandated aninhado dentro de OAMandate"/>
-				<field name="uri" description="campo uri aninhado dentro de OAMandate"/>
-			</field>
+			<field name="identifier.brcris" description="Indentificador gerado no padrão adotado pelo BrCris"/>
+			<field name="type" description="Descrição do tipo do projeto"/>
+			<field name="acronym" description="Siglas de identificação do projeto"/>
+			<field name="title" description="Título do projeto"/>
+			<field name="startDate" description="Data de início do projeto"/>
+			<field name="endDate" description="Data de término do projeto"/>
+			<field name="subject" description="Assunto do projeto"/>
+			<field name="keyword" description="Palavras chave"/>
+			<field name="researchAreas" description="áreas de pesquisa"/>
+			<field name="researchAreas.cnpq" description="áreas de pesquisa CNPQ"/>
+			<field name="abstract" description="Resumo do projeto"/>
+			<field name="status" description="Situação do projeto"/>
 		</entity>
 		<entity name="Funding">
 			<field name="identifier.brcris"/>
@@ -410,7 +397,15 @@
 		<relation name="Applicant" description="Is a relation related to an OrgUnit of Patent." fromEntity="Patent" toEntity="OrgUnit"/>
 		<relation name="Creator" description="Is a relation related to an Person of Software." fromEntity="Software" toEntity="Person"/>
 		<relation name="IsProgramOf" description="Is a relation beteween a research group (considered as an OrgUnit) and a member." fromEntity="Program" toEntity="Course"/>
-		<relation name="ConsortiumMembership" description="Is a relation beteween two project team and member." fromEntity="Project" toEntity="Person"/>
+		
+		<relation name="ProjectMembership" description="Relacionamento entre o projeto e os membros do projeto" fromEntity="Project" toEntity="Person">
+			<attributes>
+				<field name="role" description="Função do integrante no projeto"/> 
+				<field name="startDate" description="Início de participação no projeto"/> 
+				<field name="endDate" description="Termino de participação no projeto"/>
+			</attributes>
+		</relation>
+		
 		<relation name="ResearchGroupMembership" description="Is a relation beteween a project team and a funding." fromEntity="OrgUnit" toEntity="Person">
 			<attributes>
 				<field name="role" description="the role of the member. Ex.: leader, researcher, assistant, etc."/>
