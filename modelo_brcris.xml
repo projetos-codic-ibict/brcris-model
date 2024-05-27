@@ -158,6 +158,7 @@
 			<field name="accessType" description="COAR Rights Types"/>
 			<field name="year"/>
 			<field name="service"/>
+			<field name="urlNDLTD"/>
 		</entity>
 		<entity name="Course">
 			<field name="identifier.brcris"/>

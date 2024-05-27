@@ -171,3 +171,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
     - Deleted relation
         - ConsortiumMembership
+
+## [0.0.8] - 2024-05-27
+
+##### *Author: Raulivan Rodrigo*
+### Updated
+
+- Entity **Publication**
+    
+    - Included fields
+        - urlNDLTD
