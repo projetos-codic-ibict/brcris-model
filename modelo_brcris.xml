@@ -321,7 +321,6 @@
 			<field name="URL" description="URL de acesso ao grupo"/>
 			<field name="researchLine" description="nome da linha de pesquisa do grupo (pode-se ter várias)"/>
 			<field name="keyword" description="palavras chaves informadas do grupo (pode-se ter várias)"/>
-			<field name="knowledgeArea" description="área de Conhecimento mais específica do grupo (pode-se ter várias)"/>
 			<field name="applicationSector" description="setor de aplicação do grupo (pode-se ter várias)"/>
 			<field name="equipment" description="equipamentos que estão associados ao grupo"/>
 			<field name="software" description="softwares que estão disponíveis ao grupo"/>
@@ -346,6 +345,7 @@
 		<relation name="CourseOrgUnit" description="The OrgUnit(s) that provided the Course." fromEntity="OrgUnit" toEntity="Course"/>
 		<relation name="LeaderResearchGroupOrgUnit" description="The OrgUnit(s) that provided the ResearchGroup leader." fromEntity="OrgUnit" toEntity="ResearchGroup"/>
 		<relation name="PartnerResearchGroupOrgUnit" description="The OrgUnits(s) that have Partner with the ResearchGroups" fromEntity="OrgUnit" toEntity="ResearchGroup"/>
+		<relation name="ResearchGroupArea" description="Research Group Knowledge Areas" fromEntity="ResearchGroup" toEntity="Concept"/>
 		<relation name="MemberResearchGroup" description="Is a relation between Person and ResearchGroup" fromEntity="Person" toEntity="ResearchGroup">
 			<field name="role" description="Indicate the rold of the member"/>
 			<field name="scholarshipHolder" description="Indicates if the member is a scholarship holder"/>

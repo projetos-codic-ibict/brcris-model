@@ -181,3 +181,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
     
     - Included fields
         - urlNDLTD
+
+## [0.0.9] - 2024-06-14
+
+##### *Author: Tiago Oliveira*
+### Updated
+
+- Entity **ResearchGroup**
+    - Removed fields
+        - knowledgeArea
+- Relationship **ResearchGroupArea**
+  - Relationship between **ResearchGroup** - **Concept**
