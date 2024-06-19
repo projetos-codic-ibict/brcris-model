@@ -321,6 +321,7 @@
 			<field name="URL" description="URL de acesso ao grupo"/>
 			<field name="researchLine" description="nome da linha de pesquisa do grupo (pode-se ter várias)"/>
 			<field name="keyword" description="palavras chaves informadas do grupo (pode-se ter várias)"/>
+      <field name="knowledgeArea" description="área de conhecimento do grupo(pode-se ter várias)"/>
 			<field name="applicationSector" description="setor de aplicação do grupo (pode-se ter várias)"/>
 			<field name="equipment" description="equipamentos que estão associados ao grupo"/>
 			<field name="software" description="softwares que estão disponíveis ao grupo"/>
