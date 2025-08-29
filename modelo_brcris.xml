@@ -20,23 +20,18 @@
 			<field name="gender"/>
 			<field name="electronicAddress" description="E-mail"/> <!-- se houver, verificar se é válido (@)-->
 			<field name="birthDate"/>
-			<field name="birthCountry"/> <!-- validar no corpus de país -->
-			<field name="birthState"/> <!-- validar no corpus de estado -->
-			<field name="birthCity"/> <!-- validar no corpus de cidade -->
+			<field name="birthCountry"/> <!-- validar na lista de autoridade de país -->
+			<field name="birthState"/> <!-- validar na lista de autoridade de estado -->
+			<field name="birthCity"/> <!-- validar na lista de autoridade de cidade -->
 			<field name="nationality"/> 
-			<field name="researchArea"> <!-- até o momento, areas de atuação virão apenas do Lattes -->
-				<field name="biggestArea"/>
-				<field name="area"/>
-				<field name="subarea"/>
-				<field name="speciality"/>
-			</field>
+			<field name="researchArea"> <!-- validar na lista de autoridade de areas, concatenando toda a árvore em uma estrutura de diretorios. Ex.: Grande Area / Area / Sub-area / Especialidade -->
 			<field name="fone" description="telefone"/> <!-- do endereço profissional, mas individualizado -->
 			<field name="personalURL"/> <!-- do endereço profissional, mas individualizado. Checar se é uma url -->
 			<field name="miniBiography"/>
 			<field name="Country"/> <!-- Verificar com a Vívian se é usado em algum lugar -->
 		</entity>
 		<entity name="OrgUnit">
-			<field name="identifier.brcris" description="hash gerado utilizando iso do país concatenado ao nome"/>
+			<field name="identifier.brcris" description="hash gerado utilizando nome?? ou nome + cidade?? CONFIRMAR!!"/>
 			<field name="identifier.brcrisName"/>
 			<field name="identifier.ror"/>
 			<field name="identifier.grid"/>
@@ -58,58 +53,16 @@
 			<field name="acronym" description="Sigla da organização"/>
 			<field name="name" description="nome da organização"/>
 			<field name="electronicAddress"/>
-			<field name="coordinates">
-				<field name="latitude"/>
-				<field name="longitude"/>
-			</field>
-			<field name="address">
-				<field name="description"/>
-				<field name="cep"/>
-				<field name="city"/>
-				<field name="neighborhood"/>
-				<field name="state"/>
-				<field name="country"/>
-			</field>
+			<field name="latitude"/>
+			<field name="longitude"/>
+			<field name="address"/>
+			<field name="cep"/>
+			<field name="city"/><!-- validar na lista de autoridade de cidades se o país for Brasil -->
+			<field name="neighborhood"/>
+			<field name="state"/><!-- validar na lista de autoridade de estados se o país for Brasil -->
+			<field name="country"/> <!-- validar na lista de autoridade de país -->
 			<field name="phone"/>
-			<field name="websiteUrl" description="Site do Periódico"/>
-		</entity>
-		<entity name="Service">
-			<field name="identifier.oai" description="id oai"/>
-			<field name="identifier.issn"/>
-			<field name="identifier.isbn"/>
-			<field name="identifier.brcris" description="hash gerado com ???"/>
-			<field name="identifier.other"/>
-			<field name="acronym"/>
-			<field name="title"/>
-			<field name="OAIPMHBaseURL"/>
-			<field name="sourceType"/>
-			<field name="phoneNumber"/>
-			<field name="email"/>
-			<field name="url"/>
-		</entity>
-		<entity name="Journal">
-			<field name="identifier.issn" description="ISSN"/>
-			<field name="identifier.issn_l" description="ISSN-L"/>
-			<field name="identifier.openalex" description="Identificação da revista na OpenAlex"/>
-			<field name="identifier.brcris" description="Identificação da revista no padrão do BrCris (hash do ISSN)"/>
-			<field name="title" description="título da revista"/>
-			<field name="publisher" description="Quem publica a revista"/>
-			<field name="websiteURL" description="url da revista"/>
-			<field name="isOa" description="Verifica se a revista é Oa (True ou False)"/>
-			<field name="isInDoaj" description="Verifica se a revista está no Doaj (True ou False)"/>
-			<field name="apcCost" description="Taxa de Processamento de Artigos">
-				<field name="apcAmount" description="Valor da revista (APC)"/>
-				<field name="apcCurrency" description="Moeda do APC"/>
-			</field>
-			<field name="countryCode" description="Código do país"/>
-			<field name="type" description="Tipo de publicação"/>
-			<field name="assessmentArea" description="Área da Revista"/>
-			<field name="qualis" description="Qualis da Revista"/>
-			<field name="keywords" description="Palavras chave "/>
-			<field name="2yr_mean_citedness" description="média de citação"/>
-			<field name="h_index" description="índice h"/>
-			<field name="i10_index" description="índice i10"/>
-			<field name="googleH5" description="Google Scholar H5"/>
+			<field name="websiteUrl" description="Site da organização"/> <!-- checar se é uma url -->
 		</entity>
 		<entity name="Publication">
 			<field name="identifier.brcris" description="hash gerado com título + ano de publicação"/>
@@ -158,6 +111,44 @@
 			<field name="year"/>
 			<field name="service"/>
 			<field name="urlNDLTD"/>
+		</entity>
+		<entity name="Service">
+			<field name="identifier.oai" description="id oai"/>
+			<field name="identifier.issn"/>
+			<field name="identifier.isbn"/>
+			<field name="identifier.brcris" description="hash gerado com ???"/>
+			<field name="identifier.other"/>
+			<field name="acronym"/>
+			<field name="title"/>
+			<field name="OAIPMHBaseURL"/>
+			<field name="sourceType"/>
+			<field name="phoneNumber"/>
+			<field name="email"/>
+			<field name="url"/>
+		</entity>
+		<entity name="Journal">
+			<field name="identifier.issn" description="ISSN"/>
+			<field name="identifier.issn_l" description="ISSN-L"/>
+			<field name="identifier.openalex" description="Identificação da revista na OpenAlex"/>
+			<field name="identifier.brcris" description="Identificação da revista no padrão do BrCris (hash do ISSN)"/>
+			<field name="title" description="título da revista"/>
+			<field name="publisher" description="Quem publica a revista"/>
+			<field name="websiteURL" description="url da revista"/>
+			<field name="isOa" description="Verifica se a revista é Oa (True ou False)"/>
+			<field name="isInDoaj" description="Verifica se a revista está no Doaj (True ou False)"/>
+			<field name="apcCost" description="Taxa de Processamento de Artigos">
+				<field name="apcAmount" description="Valor da revista (APC)"/>
+				<field name="apcCurrency" description="Moeda do APC"/>
+			</field>
+			<field name="countryCode" description="Código do país"/>
+			<field name="type" description="Tipo de publicação"/>
+			<field name="assessmentArea" description="Área da Revista"/>
+			<field name="qualis" description="Qualis da Revista"/>
+			<field name="keywords" description="Palavras chave "/>
+			<field name="2yr_mean_citedness" description="média de citação"/>
+			<field name="h_index" description="índice h"/>
+			<field name="i10_index" description="índice i10"/>
+			<field name="googleH5" description="Google Scholar H5"/>
 		</entity>
 		<entity name="Course">
 			<field name="identifier.brcris"/>
