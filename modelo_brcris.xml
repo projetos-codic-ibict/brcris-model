@@ -6,7 +6,7 @@
 			<field name="identifier.lattes"/> <!-- sem url e único-->
 			<field name="identifier.lattesShort"/> <!-- sem url e único-->
 			<field name="identifier.cpf"/>
-			<field name="identifier.email" description="identificador único e-mail"/>
+			<field name="identifier.email" description="identificador único e-mail"/> <!-- se houver, verificar se é válido (@)-->
 			<field name="identifier.orcid"/> <!-- sem url, único, validado com hifens e checando o digito verificador -->
 			<field name="identifier.researcherID"/>
 			<field name="identifier.scopusAuthorID"/>
@@ -18,17 +18,15 @@
 			<field name="alternateName"/>
 			<field name="citationName"/> <!-- usar os nomes de citaçoes do currículo (com maior grau de confiança) -->
 			<field name="gender"/>
-			<field name="electronicAddress" description="E-mail"/> <!-- se houver, verificar se é válido (@)-->
 			<field name="birthDate"/>
 			<field name="birthCountry"/> <!-- validar na lista de autoridade de país -->
 			<field name="birthState"/> <!-- validar na lista de autoridade de estado -->
 			<field name="birthCity"/> <!-- validar na lista de autoridade de cidade -->
 			<field name="nationality"/> 
-			<field name="researchArea"> <!-- validar na lista de autoridade de areas, concatenando toda a árvore em uma estrutura de diretorios. Ex.: Grande Area / Area / Sub-area / Especialidade -->
+			<field name="researchArea"> <!-- nao precisa validar na lista de autoridade. Deve concatenar toda a árvore em uma estrutura de diretorios. Ex.: Grande Area / Area / Sub-area / Especialidade -->
 			<field name="fone" description="telefone"/> <!-- do endereço profissional, mas individualizado -->
 			<field name="personalURL"/> <!-- do endereço profissional, mas individualizado. Checar se é uma url -->
-			<field name="miniBiography"/>
-			<field name="Country"/> <!-- Verificar com a Vívian se é usado em algum lugar -->
+			<field name="miniBiography"/> <!-- somente PT-BR -->
 		</entity>
 		<entity name="OrgUnit">
 			<field name="identifier.brcris" description="hash gerado utilizando nome?? ou nome + cidade?? CONFIRMAR!!"/>
