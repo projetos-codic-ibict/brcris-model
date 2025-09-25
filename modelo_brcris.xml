@@ -2,7 +2,7 @@
 <entity-relation-metamodel>
 	<entities>
 		<entity name="Person">
-			<field name="identifier.brcris"/> <!-- será identico ao lattes (sem url)-->
+			<field name="identifier.brcris"/> <!-- será o lattes (sem url) com md5 -->
 			<field name="identifier.lattes"/> <!-- sem url e único-->
 			<field name="identifier.lattesShort"/> <!-- sem url e único-->
 			<field name="identifier.cpf"/>
@@ -29,7 +29,7 @@
 			<field name="miniBiography"/> <!-- somente PT-BR -->
 		</entity>
 		<entity name="OrgUnit">
-			<field name="identifier.brcris" description="hash gerado utilizando nome?? ou nome + cidade?? CONFIRMAR!!"/>
+			<field name="identifier.brcris" description="MD5 do id devolvido pela API do Rene"/>
 			<field name="identifier.brcrisName"/>
 			<field name="identifier.ror"/>
 			<field name="identifier.grid"/>
