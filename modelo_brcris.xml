@@ -23,7 +23,7 @@
 			<field name="birthState"/> <!-- validar na lista de autoridade de estado -->
 			<field name="birthCity"/> <!-- validar na lista de autoridade de cidade -->
 			<field name="nationality"/> 
-			<field name="researchArea"> <!-- nao precisa validar na lista de autoridade. Deve concatenar toda a árvore em uma estrutura de diretorios. Ex.: Grande Area / Area / Sub-area / Especialidade -->
+			<field name="researchArea"> <!-- nao precisa validar na lista de autoridade, mas deve ser captalizado corretamente. Deve concatenar toda a árvore em uma estrutura de diretorios. Ex.: Grande Area / Area / Sub-area / Especialidade -->
 			<field name="fone" description="telefone"/> <!-- do endereço profissional, mas individualizado -->
 			<field name="personalURL"/> <!-- do endereço profissional, mas individualizado. Checar se é uma url -->
 			<field name="miniBiography"/> <!-- somente PT-BR -->
@@ -63,7 +63,7 @@
 			<field name="websiteUrl" description="Site da organização"/> <!-- checar se é uma url -->
 		</entity>
 		<entity name="Publication">
-			<field name="identifier.brcris" description="hash gerado com título + ano de publicação"/>
+			<field name="identifier.brcris" description="hash gerado com título + ano de publicação + tipo"/>
 			<field name="identifier.doi" description="id doi"/>
 			<field name="identifier.capes" description="id capes"/>
 			<field name="identifier.bdtd"/>
@@ -75,13 +75,13 @@
 			<field name="identifier.issn"/>
 			<field name="identifier.isbn"/>
 			<field name="identifier.other"/>
-			<field name="type"/>
-			<field name="language"/>
-			<field name="title"/>
+			<field name="type"/> <!-- validar na lista de autoridade de tipos e gravar no idima PT (anteriormente era no coar)-->
+			<field name="language"/> <!-- validar na lista de autoridade de idiomas e gravar no idima PT -->
+			<field name="title"/> <!-- testar api de padronizacao do Rene -->
 			<field name="subtitle"/>
 			<field name="alternativeTitle"/>
-			<field name="defenceDay"/>
-			<field name="publicationDate"/>
+			<field name="defenceDay"/> <!-- somente ano -->
+			<field name="publicationDate"/> <!-- somente ano -->
 			<field name="degreeDate"/>
 			<field name="number"/>
 			<field name="volume"/>
@@ -93,44 +93,28 @@
 			<field name="author"/>
 			<field name="advisor"/>
 			<field name="coadvisor"/>
-			<field name="referee"/>
-			<field name="researchArea.cnpq" description="CNPq vocabullary code"/>
-			<field name="researchArea.capes" description="CAPES vocabullary code"/>
-			<field name="researchArea.other" description="Other vocabullary code"/>
-			<field name="resourceUrl"/>
+			<field name="referee"/> <!-- ?? -->
+			<field name="researchArea.cnpq" description="CNPq vocabullary code"/> <!-- nao precisa validar na lista de autoridade, mas deve ser captalizado corretamente. Deve concatenar toda a árvore em uma estrutura de diretorios. Ex.: Grande Area / Area / Sub-area / Especialidade -->
+			<field name="researchArea.capes" description="CAPES vocabullary code"/> <!-- nao precisa validar na lista de autoridade, mas deve ser captalizado corretamente. Deve concatenar toda a árvore em uma estrutura de diretorios. Ex.: Grande Area / Area / Sub-area / Especialidade -->
+			<field name="researchArea.other" description="Other vocabullary code"/> <!-- nao precisa validar na lista de autoridade, mas deve ser captalizado corretamente. Deve concatenar toda a árvore em uma estrutura de diretorios. Ex.: Grande Area / Area / Sub-area / Especialidade -->
+			<field name="resourceUrl"/> <!-- Checar se é uma url -->
 			<field name="rights"/>
 			<field name="license"/>
-			<field name="keyword"/>
+			<field name="keyword"/> <!-- testar api de padronizacao do Rene -->
 			<field name="abstract"/>
 			<field name="status"/>
 			<field name="coverage"/>
 			<field name="references"/>
-			<field name="accessType" description="COAR Rights Types"/>
-			<field name="year"/>
+			<field name="accessType" description="COAR Rights Types"/> <!-- validar na lista de autoridade de tipos de acesso (baseado no coar) e gravar no idima PT -->
 			<field name="service"/>
-			<field name="urlNDLTD"/>
-		</entity>
-		<entity name="Service">
-			<field name="identifier.oai" description="id oai"/>
-			<field name="identifier.issn"/>
-			<field name="identifier.isbn"/>
-			<field name="identifier.brcris" description="hash gerado com ???"/>
-			<field name="identifier.other"/>
-			<field name="acronym"/>
-			<field name="title"/>
-			<field name="OAIPMHBaseURL"/>
-			<field name="sourceType"/>
-			<field name="phoneNumber"/>
-			<field name="email"/>
-			<field name="url"/>
 		</entity>
 		<entity name="Journal">
-			<field name="identifier.issn" description="ISSN"/>
-			<field name="identifier.issn_l" description="ISSN-L"/>
+			<field name="identifier.issn" description="ISSN"/> <!-- Usar o padrao XXXX-XXXX -->
+			<field name="identifier.issn_l" description="ISSN-L"/> <!-- Usar o padrao XXXX-XXXX -->
 			<field name="identifier.openalex" description="Identificação da revista na OpenAlex"/>
 			<field name="identifier.brcris" description="Identificação da revista no padrão do BrCris (hash do ISSN)"/>
-			<field name="title" description="título da revista"/>
-			<field name="publisher" description="Quem publica a revista"/>
+			<field name="title" description="título da revista"/> <!-- testar api de padronizacao do Rene?? -->
+			<field name="publisher" description="Quem publica a revista"/> <!-- testar api de padronizacao do Rene?? -->
 			<field name="websiteURL" description="url da revista"/>
 			<field name="isOa" description="Verifica se a revista é Oa (True ou False)"/>
 			<field name="isInDoaj" description="Verifica se a revista está no Doaj (True ou False)"/>
@@ -142,36 +126,36 @@
 			<field name="type" description="Tipo de publicação"/>
 			<field name="assessmentArea" description="Área da Revista"/>
 			<field name="qualis" description="Qualis da Revista"/>
-			<field name="keywords" description="Palavras chave "/>
+			<field name="keywords" description="Palavras chave "/> <!-- testar api de padronizacao do Rene?? -->
 			<field name="2yr_mean_citedness" description="média de citação"/>
 			<field name="h_index" description="índice h"/>
 			<field name="i10_index" description="índice i10"/>
 			<field name="googleH5" description="Google Scholar H5"/>
 		</entity>
 		<entity name="Course">
-			<field name="identifier.brcris"/>
+			<field name="identifier.brcris"/> <!-- hash de nome do curso + nome da instituicao (md5) -->
 			<field name="identifier.capes"/>
 			<field name="identifier.mec"/>
 			<field name="identifier.inep"/>
 			<field name="identifier.cnpq"/>
 			<field name="identifier.other"/>
-			<field name="name"/>
-			<field name="degree" description="gradutation, specialization, master, doctoral, posDoctoral, fullProfessor"/>
-			<field name="type" description="Academic/Professional"/>
-			<field name="startDate"/>
-			<field name="endDate"/>
+			<field name="name"/> <!-- testar api de padronizacao do Rene?? -->
+			<field name="degree" description="gradutation, specialization, master, doctoral, posDoctoral, fullProfessor"/><!-- validar na lista de autoridade de graus e gravar no idima PT -->
+			<field name="type" description="Academic/Professional"/> <!-- validar na lista de autoridade de tipo (Academico ou Profissional) e gravar no idima PT -->
+			<field name="startDate"/> <!-- somente ano -->
+			<field name="endDate"/> <!-- somente ano -->
 		</entity>
 		<entity name="Program">
-			<field name="identifier.brcris"/>
+			<field name="identifier.brcris"/> <!-- hash de nome do programa + nome da instituicao (md5) -->
 			<field name="identifier.capes" description="Capes Id"/>
 			<field name="identifier.cnpq" description="CNPq Id"/>
-			<field name="name" description="Program Name"/>
-			<field name="researchArea.capes" description="capes vocabulary"/>
-			<field name="researchArea.cnpq" description="cnpq vocabulary"/>
-			<field name="evaluationArea" description="cnpq vocabulary"/>
+			<field name="name" description="Program Name"/> <!-- testar api de padronizacao do Rene?? -->
+			<field name="researchArea.capes" description="capes vocabulary"/> <!-- nao precisa validar na lista de autoridade, mas deve ser captalizado corretamente. Deve concatenar toda a árvore em uma estrutura de diretorios. Ex.: Grande Area / Area / Sub-area / Especialidade -->
+			<field name="researchArea.cnpq" description="cnpq vocabulary"/> <!-- nao precisa validar na lista de autoridade, mas deve ser captalizado corretamente. Deve concatenar toda a árvore em uma estrutura de diretorios. Ex.: Grande Area / Area / Sub-area / Especialidade -->
+			<field name="evaluationArea" description="cnpq vocabulary"/> <!-- nao precisa validar na lista de autoridade, mas deve ser captalizado corretamente. Deve concatenar toda a árvore em uma estrutura de diretorios. Ex.: Grande Area / Area / Sub-area / Especialidade -->
 			<field name="phone"/>
-			<field name="email"/>
-			<field name="websiteUrl"/>
+			<field name="email"/> <!-- se houver, verificar se é válido (@)-->
+			<field name="websiteUrl"/> <!-- Checar se é uma url -->
 		</entity>
 		<entity name="Patent">
 			<field name="identifier.brcris" description="Identificador da patente no formado do BrCris "/>
