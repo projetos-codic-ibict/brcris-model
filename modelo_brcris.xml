@@ -157,16 +157,15 @@
 			<field name="email"/> <!-- se houver, verificar se é válido (@)-->
 			<field name="websiteUrl"/> <!-- Checar se é uma url -->
 		</entity>
-		<entity name="Patent">
+		<entity name="Patent"> <!-- conferir com o Raulivan -->
 			<field name="identifier.brcris" description="Identificador da patente no formado do BrCris "/>
-			<field name="identifier.lattes" description="Identificador do currículo na Plataforma Lattes que possui a patente"/>
+			<field name="identifier.lattes" description="Identificador da patente registrado no currículo Lattes"/>
 			<field name="identifier.espacenet" description="Identificação da patente na Expacenet"/>
-			<field name="urlEspacenet" description="URL da patente na Espacenet"/>
+			<field name="resourceUrl" description="URL da patente"/>
 			<field name="kindCode" description="Código de publicação da patente Ex.: A, B1, C1 etc."/>
-			<field name="title.espacenet" description="Título da patente informado na Espacenet"/>
-			<field name="title.lattes" description="Título da patente informado na Plataforma Lattes"/>
-			<field name="depositDate" description="Data de depósito da patente"/>
-			<field name="publicationDate" description="Data de publicação da patente"/>
+			<field name="title" description="Título da patente"/><!-- testar api de padronizacao do Rene?? -->
+			<field name="depositDate" description="Data de depósito da patente"/> <!-- data completa padrao pt-br -->
+			<field name="publicationDate" description="Data de publicação da patente"/> <!-- data completa padrao pt-br -->
 			<field name="countryCode" description="Código do país de depósito da patente"/>
 			<field name="inventor" description="Nome do inventor da patente"/>
 			<field name="applicant"  description="Nome do depositante da patente"/>
@@ -183,8 +182,7 @@
 				<field name="sequence"  description="Ordem das classificações"/>
 				<field name="text" description="Código completo da classificação"/>
 			</field>
-			<field name="abstract.lattes"  description="Resumo da patente informado na Plataforma Lattes"/>
-			<field name="abstract.espacenet" description="Resumo da patente informado na Espacenet"/>
+			<field name="abstract"  description="Resumo da patente"/>
 			<field name="originatesFrom" description="Código da Família da patente, conforme organização definida pela Espacenet"/>
 			<field name="alternateIdentifier" description="Códigos alternativos de identificação da Patente">
 				<field name="status"  description="Status do número de identificação"/>
