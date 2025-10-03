@@ -106,7 +106,7 @@
 			<field name="coverage"/>
 			<field name="references"/>
 			<field name="accessType" description="COAR Rights Types"/> <!-- validar na lista de autoridade de tipos de acesso (baseado no coar) e gravar no idima PT -->
-			<field name="service"/>
+			<field name="eventName"/> <!-- caso seja uma publicacao em anais de eventos -->
 		</entity>
 		<entity name="Journal">
 			<field name="identifier.issn" description="ISSN"/> <!-- Usar o padrao XXXX-XXXX -->
@@ -193,31 +193,30 @@
 			</field>
 		</entity>
 		<entity name="Software">
-			<field name="identifier.brcris" description="Identificador do software no formado do BrCris"/>
-			<field name="inpiRegistrationCode" description="Número de registro no INPI"/>
-			<field name="title.lattes" description="titulo informado no Lattes"/>
-			<field name="releaseYear" description="Ano informado no Lattes"/>
-			<field name="doi" description="número do doi"/>
-			<field name="language" description="Idioma do Software"/>
-			<field name="registrationCountry" description="Pais de registro"/>
-			<field name="kind" description="Natureza do software"/>
+			<field name="identifier.brcris" description="Identificador do software no formado do BrCris"/> <!-- hash gerado com titulo + ano -->
+			<field name="identifier.inpi" description="Número de registro no INPI"/>
+			<field name="title" description="titulo do software"/>
+			<field name="releaseYear" description="Ano do software"/>
+			<field name="language" description="Idioma do Software"/><!-- validar na lista de autoridade de idiomas e gravar no idima PT -->
+			<field name="registrationCountry" description="Pais de registro"/><!-- validar na lista de autoridade de países -->
+			<field name="kind" description="Natureza do software"/><!-- validar na lista de autoridade de tipo de software -->
 			<field name="environment" description="Ambiente do Software"/>
 			<field name="availability" description="Disponibilidade do Software"/>
 			<field name="description" description="A finalidade do software"/>
-			<field name="fundingInstitution" description="instituição financiadora"/>
+			<field name="fundingInstitution" description="instituição financiadora"/><!-- validar na api de orgunit do rene -->
 			<field name="platform" description="Plataforma do Software"/>
-			<field name="knowledgeAreas" description="áreas de conhecimento do software"/>
+			<field name="knowledgeAreas" description="áreas de conhecimento do software"/><!-- nao precisa validar na lista de autoridade, mas deve ser captalizado corretamente. Deve concatenar toda a árvore em uma estrutura de diretorios. Ex.: Grande Area / Area / Sub-area / Especialidade -->
 			<field name="creator" description="Nome dos criadores do software"/>
 			<field name="additionalInformation" description="Informações adicionais"/>
-			<field name="keyword" description="Palavras chave"/>
+			<field name="keyword" description="Palavras chave"/> <!-- somente capitalizar e remover duplicadas -->
 			<field name="activitySector" description="Setor de Atividade"/>
-			<field name="depositDate" description="Data de registro do software"/>
-			<field name="concessionDate" description="Data de publicação do registro do software"/>
-			<field name="registrationInstitution" description="Instituição de registro"/>
-			<field name="urlINPI" description="URL do software no INPI"/>
+			<field name="depositDate" description="Data de registro do software"/> <!-- dd/mm/yyyy -->
+			<field name="concessionDate" description="Data de publicação do registro do software"/> <!-- dd/mm/yyyy -->
+			<field name="registrationInstitution" description="Instituição de registro"/><!-- validar na api de orgunit do rene -->
+			<field name="urlINPI" description="URL do software no INPI"/><!-- verificar se é url válida -->
 			<field name="owner" description="Proprietário do software"/>
 		</entity>
-		<entity name="Project">
+		<entity name="Project"> <!-- Não atualizado nessa versão (03/10/2025) -->
 			<field name="identifier.proccessNumber"/>
 			<field name="identifier.brcris" description="Indentificador gerado no padrão adotado pelo BrCris"/>
 			<field name="type" description="Descrição do tipo do projeto"/>
@@ -232,7 +231,7 @@
 			<field name="abstract" description="Resumo do projeto"/>
 			<field name="status" description="Situação do projeto"/>
 		</entity>
-		<entity name="Funding">
+		<entity name="Funding"> <!-- Não atualizado nessa versão (03/10/2025) -->
 			<field name="identifier.brcris"/>
 			<field name="type"/>
 			<field name="acronym"/>
@@ -247,7 +246,7 @@
 				<field name="uri" description="campo uri aninhado dentro de OAMandate"/>
 			</field>
 		</entity>
-		<entity name="Event">
+		<entity name="Event"> <!-- Não considerado nessa versão (03/10/2025). Será usado o campo eventName em publication -->
 			<field name="identifier.brcris"/>
 			<field name="internalIdentifier"/>
 			<field name="type"/>
@@ -264,6 +263,8 @@
 			<field name="description"/>
 			<field name="subject"/>
 		</entity>
+		<!-- Não considerado nessa versão (03/10/2025) -->
+		<!--
 		<entity name="Community">
 			<field name="identifier.brcris" description="identificador baseado apenas no nome"/>
 			<field name="name"/>
@@ -281,23 +282,25 @@
 			<field name="name"/>
 			<field name="description"/>
 		</entity>
+		-->
 		<entity name="ResearchGroup">
-			<field name="identifier.brcris" description="baseado no nome do grupo + ano de criação + o codigo do dgp"/>
+			<field name="identifier.brcris" description="baseado no nome do grupo + ano de criação"/>
 			<field name="identifier.dgp" description="codigo do dgp do grupo no CNPq"/>
-			<field name="name" description="nome do grupo"/>
+			<field name="name" description="nome do grupo"/> <!-- somente capitalizar e remover duplicadas -->
 			<field name="description" description="resumo informado do grupo"/>
 			<field name="status" />
 			<field name="creationYear" description="ano de criação do grupo"/>
 			<field name="URL" description="URL de acesso ao grupo"/>
-			<field name="researchLine" description="nome da linha de pesquisa do grupo (pode-se ter várias)"/>
-			<field name="keyword" description="palavras chaves informadas do grupo (pode-se ter várias)"/>
-      <field name="knowledgeArea" description="área de conhecimento do grupo(pode-se ter várias)"/>
-			<field name="applicationSector" description="setor de aplicação do grupo (pode-se ter várias)"/>
-			<field name="equipment" description="equipamentos que estão associados ao grupo"/>
-			<field name="software" description="softwares que estão disponíveis ao grupo"/>
+			<field name="researchLine" description="nome da linha de pesquisa do grupo (pode-se ter várias)"/> <!-- somente capitalizar e remover duplicadas -->
+			<field name="keyword" description="palavras chaves informadas do grupo (pode-se ter várias)"/> <!-- somente capitalizar e remover duplicadas -->
+            <field name="knowledgeArea" description="área de conhecimento do grupo(pode-se ter várias)"/> <!-- nao precisa validar na lista de autoridade, mas deve ser captalizado corretamente. Deve concatenar toda a árvore em uma estrutura de diretorios. Ex.: Grande Area / Area / Sub-area / Especialidade -->
+			<field name="applicationSector" description="setor de aplicação do grupo (pode-se ter várias)"/><!-- somente capitalizar e remover duplicadas -->
+			<field name="equipment" description="equipamentos que estão associados ao grupo"/><!-- somente capitalizar e remover duplicadas -->
+			<field name="software" description="softwares que estão disponíveis ao grupo"/><!-- somente capitalizar e remover duplicadas -->
 		</entity>
 	</entities>
 	<relations>
+		<!--
 		<relation name="Class" description="The concepts defined on a classification schema" fromEntity="ClassificationSchema" toEntity="Concept"/>
 		<relation name="ClassSynonym" description="Equivalence between concepts among different schemas" fromEntity="Concept" toEntity="Concept"/>
 		<relation name="ClassParenthood" description="The parenthood between concepts" fromEntity="Concept" toEntity="Concept"/>
@@ -305,6 +308,7 @@
 		<relation name="PublicationSubject" description="Publication Knowledge Areas" fromEntity="Publication" toEntity="Concept"/>
 		<relation name="PersonKnowledgeArea" description="Person Knowledge Areas" fromEntity="Person" toEntity="Concept"/>
 		<relation name="ProgramArea" description="Program Knowledge Areas" fromEntity="Program" toEntity="Concept"/>
+		-->
 		<relation name="Affiliation" description="Is a relation beteween Person and OrgUnit" fromEntity="OrgUnit" toEntity="Person"/>
 		<relation name="LeaderResearchGroup" description="Is a relation between the Leader Person and ResearchGroup" fromEntity="Person" toEntity="ResearchGroup">
 			<field name="scholarshipHolder" description="Indicates if the member is a scholarship holder"/>
