@@ -13,6 +13,7 @@
 			<field name="identifier.cienciaID"/>
 			<field name="identifier.capes"/> <!-- id numérico -->
 			<field name="identifier.openalex"/> <!-- alfanumérico, sem url, único -->
+			<field name="identifier.dark"/>
 			<field name="identifier.other"/>
 			<field name="name" description="nome da pessoa"/> <!-- usar o do nome do currículo (com maior grau de confiança) -->
 			<field name="alternateName"/>
