@@ -74,6 +74,7 @@
 			<field name="identifier.scp-number"/>
 			<field name="identifier.issn"/>
 			<field name="identifier.isbn"/>
+			<field name="identifier.dark"/>
 			<field name="identifier.other"/>
 			<field name="type"/> <!-- validar na lista de autoridade de tipos e gravar no idima PT (anteriormente era no coar)-->
 			<field name="language"/> <!-- validar na lista de autoridade de idiomas e gravar no idima PT -->
@@ -158,7 +159,7 @@
 			<field name="websiteUrl"/> <!-- Checar se é uma url -->
 		</entity>
 		<entity name="Patent"> <!-- conferir com o Raulivan -->
-			<field name="identifier.brcris" description="Identificador da patente no formado do BrCris "/>
+			<field name="identifier.brcris" description="Identificador da patente no formado do BrCris "/> <!-- hash gerado com titulo + ano -->
 			<field name="identifier.lattes" description="Identificador da patente registrado no currículo Lattes"/>
 			<field name="identifier.espacenet" description="Identificação da patente na Expacenet"/>
 			<field name="resourceUrl" description="URL da patente"/>
