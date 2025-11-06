@@ -24,7 +24,7 @@
 			<field name="birthState"/> <!-- validar na lista de autoridade de estado -->
 			<field name="birthCity"/> <!-- validar na lista de autoridade de cidade -->
 			<field name="nationality"/> 
-			<field name="researchArea"> <!-- nao precisa validar na lista de autoridade, mas deve ser captalizado corretamente. Deve concatenar toda a árvore em uma estrutura de diretorios. Ex.: Grande Area / Area / Sub-area / Especialidade -->
+			<field name="researchArea"/> <!-- nao precisa validar na lista de autoridade, mas deve ser captalizado corretamente. Deve concatenar toda a árvore em uma estrutura de diretorios. Ex.: Grande Area / Area / Sub-area / Especialidade -->
 			<field name="fone" description="telefone"/> <!-- do endereço profissional, mas individualizado -->
 			<field name="personalURL"/> <!-- do endereço profissional, mas individualizado. Checar se é uma url -->
 			<field name="miniBiography"/> <!-- somente PT-BR -->
